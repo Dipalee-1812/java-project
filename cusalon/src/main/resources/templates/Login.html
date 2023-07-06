@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:insert="layout :: header"></th:block>
+<link th:href="@{/CSS/main.css}" rel="stylesheet" />
+
+<body>
+    <th:block th:insert="layout :: navbar"></th:block>
+    <h2>Login</h2>
+    <form th:action="login2" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required autofocus />
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+        </div>
+        <div>
+            <!-- <button type="submit">Login</button> -->
+            <button type="submit" value="Login" style="color:rgb(0, 255, 153);font-size: larger;">Login</button>
+        </div>
+    </form>
+</body>
+</html>

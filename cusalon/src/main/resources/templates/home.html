@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:insert="layout :: header"></th:block>
+<link th:href="@{/CSS/main.css}" rel="stylesheet" />
+<body>
+    
+    <div class="container" style="text-shadow: 5px 4px 5px yellow;">
+        <th:block th:insert="layout :: navbar"></th:block>
+        <h1>Creative Unisex Salon</h1>
+        <p>Hello... Welcome</p>
+        <p>Today is <span th:text="${today}"></span></p>
+      
+        <th:block th:insert="layout :: demo"></th:block>
+
+
+        <!-- <th:block th:insert="layout :: footer"></th:block>
+        <a class="nav-link" href="/login">Login</a> -->
+       
+    </div>
+</body>
+</html>

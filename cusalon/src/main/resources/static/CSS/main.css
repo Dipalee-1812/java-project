@@ -1,0 +1,32 @@
+/* #dp-container{
+margin: auto;
+height: 200px;
+width: 200px;
+box-sizing: border-box;
+border-radius: 100px;
+background-size: cover; 
+} */
+
+body {
+    background-image :  url(https://en.pimg.jp/074/304/028/1/74304028.jpg);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color:white;
+/*    
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px; */
+}
+
+#table ,th
+{
+    color:rgb(249, 248, 250);
+}
+#table ,td ,tr{
+    color:aqua;
+}

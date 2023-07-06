@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+    <th:block th:insert="layout :: header"></th:block>
+    <link th:href="@{/CSS/main.css}" rel="stylesheet" />
+<body>
+    <th:block th:insert="layout :: header"></th:block>
+    <div class="container">
+        <th:block th:insert="layout :: navbar"></th:block>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Mob.No.</th>
+            <th>Gender</th>
+            <th>Appointment Date</th>
+            <th>Amenity</th>
+        </tr>   
+            <tr th:each="t:${tasks}">
+                <td th:text="${t.id}"></td>
+                <td th:text="${t.name}"></td>
+                <td th:text="${t.mob}"></td>
+                <td th:text="${t.gender}"></td>
+                <td th:text="${t.aptime}"></td>
+                <td th:text="${t.amenity}"></td>
+
+                <td>
+                    <a th:href="@{/update/{id}(id=${t.id})}" class="btn btn-success">Update</a>
+                    <a th:href="@{/delete/{id}(id=${t.id})}"  class="btn btn-danger">Delete</a>
+                
+                </td>
+            </tr>
+    </table>
+</div>
+</body>
+</html>

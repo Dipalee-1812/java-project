@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+    <th:block th:insert="layout :: header"></th:block>
+    <link th:href="@{/CSS/main.css}" rel="stylesheet" />
+<body>
+    <div class="container">
+        <th:block th:insert="layout :: navbar"></th:block>
+        <form th:object="${salon}" action="/updatesalon" method="post">
+
+            <input type="hidden" name="id" th:field="*{id}"/>
+
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required th:field="*{name}"/><br>
+
+            <!-- <label for="pass" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pass" required th:field="*{pass}"/><br> -->
+
+            <label for="mob" class="form-label">Mob.No.</label>
+            <input type="number" class="form-control" id="mob" required th:field="*{mob}"/><br>
+
+            <label for="gender" class="form-label">Gender</label>
+            <select id="gender" class="form-control" th:field="*{gender}">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Transegender">Transegender</option>
+            </select>    
+            <label for="aptime" class="form-label">Appointment Time</label>
+            <input type="date" class="form-control" id="aptime" required th:field="*{aptime}"/><br>
+
+            <lable for="amenity" class="form-label">Amenity</lable>
+                <select id="amenity" class="form-control" th:field="*{amenity}">
+                    <optgroup label="Hair Services">
+                        <option value="haircut">Hair Cut</option>
+                        <option value="head message">Head message</option>
+                        <option value="flat Iron">Flat Iron</option>
+                        <option value="Roller Setter">Roller Setting</option>
+                        <option value="Rebounding">Rebounding</option>
+                        <option value="Smoothering">Smoothering</option>
+                        <option value="hair spa(matrix)">Hair spa(Matrix)</option>
+                        <option value="hair spa(Loreal)">Hair spa(Loreal)</option>
+                        <option value="hair spa(Olive)">Hair spa(Olive)</option>
+                        <option value="per Streak">Per Streak</option>
+                    </optgroup>
+                    <optgroup label="Facial">
+                        <option value="normal">Normal</option>
+                        <option value="fruit">Fruit</option>
+                        <option value="Aroma">Aroma</option>
+                        <option value="instant glow">INstant Glow</option>
+                        <option value="gold facial">Gold Facial</option>
+                        <option value="diamond">Diamond</option>
+                        <option value="Bridal">Bridal</option>
+                        <option value="mint-facial">Mint-facial</option>
+                        <option value="de-tan">De-Tan </option>
+                        <option value="silver">Silver</option>
+                        <option value="alovera">Alovera</option>
+                    </optgroup>
+
+                    <optgroup label="waxing">
+                        <option value="Full arms">Full Arms</option>
+                        <option value="Under Arms">Under Arms</option>
+                        <option value="Half Arms">Half Arms</option>
+                        <option value="Half Legs">Half Legs</option>
+                        <option value="Face">Face</option>
+                        <option value="Stomach">Stomach/Back</option>
+                        <option value="Fullbody">Full Body</option>
+                        <option value="Bikini">Bikini</option>
+                        <option value="side neck">Side Neck</option>
+                        <option value="Hair Extension">Hair Extension</option>
+                        <option value="French wax">French Wax</option>
+                        <option value="Brazilian Wax">Brazilian Wax</option>
+                    </optgroup>
+
+                    <optgroup label="Make-up">
+                        <option value="bridal make up">Bridal Make Up</option>
+                        <option value="Party-make-up">Party-make-up</option>
+                        <option value="engagement-make-up">Engagement-make-up</option>
+                        <option value="Reception-make-up">Reception-make-up</option>
+                        <option value="Saree-Drapping">Saree Drapping</option>
+                        <option value="Hair do">Hair Do</option>
+                        <option value="Eye-make-up">Eye-make-up</option>
+                        <option value="Hair style">Hair style</option>
+                        <option value="Casual -make-up">Casual-make-up</option>
+                    </optgroup>
+
+                    <optgroup label="Bleach">
+                        <option value="simple basic">Simple Basic</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="skin lightening treatement">Skin-Lightening Treatment</option>
+                        <option value="facial bleach">Facial- bleach</option>
+                        <option value="full body">Body</option>
+                        
+                    </optgroup>
+
+                    <optgroup label="Pedicure">
+                        <option value="fruit">Fruit</option>
+                        <option value="Oxi/De-Tan">Oxi/De-Tan</option>
+                        <option value="gold">Gold</option>
+                        <option value="hand/feet">Hand/feet</option>
+                        <option value="full body">Full body</option>
+                        <option value="Deluxe">Deluxe</option>
+                    </optgroup>
+                    
+
+                </select><br><br>
+            <input type="submit" value="Update User" style="color:orange"/>
+        </form>
+    </div>
+</body>
+</html>
